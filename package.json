@@ -1,0 +1,26 @@
+{
+  "name": "trabalhofinalptas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EduardaCuer/trabalhofinalptas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/EduardaCuer/trabalhofinalptas/issues"
+  },
+  "homepage": "https://github.com/EduardaCuer/trabalhofinalptas#readme",
+  "dependencies": {
+    "@prisma/client": "^6.14.0",
+    "express": "^5.1.0",
+    "prisma": "^6.14.0"
+  }
+}
