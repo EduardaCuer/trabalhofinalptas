@@ -42,7 +42,7 @@ class AuthController {
             });
         }
         const salt = bcryptjs.genSaltSync(8);
-        const hashPassword = bcryptjs.hashPassword(password, salt);
+        const hashPassword = bcryptjs.hashSync(password, salt);
 
         try{
             const usuario = await prisma.usuario.create({
@@ -87,6 +87,16 @@ class AuthController {
                 return res.json({
                     erro: true,
                     mensagem: "Usuário não encontrado!",
+                });
+            }
+
+            //autenticação
+            const senhaCorreta = bcryptjs.compareSync(password, usuario.password);
+
+            if (!senhaCorreta) {
+                return res.json({
+                    erro: true,
+                    mensagem: "Senha está incorreta!",
                 });
             }
 

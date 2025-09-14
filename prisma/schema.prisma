@@ -31,10 +31,7 @@ model Mesa {
   reservas Reserva[]
 }
 
-model Reserva{
-  id Int @id @default(autoincrement())
-  data DateTime
-  n_pessoas Int
+
 
 //ver//
   // true: reserva ativa | false: reserva cancelada
@@ -43,6 +40,4 @@ model Reserva{
   usuarioId Int
   usuario Usuario @relation(fields: [usuarioId], references: [id])
 
-  mesaId Int
-  mesa Mesa @relation(fields: [mesaId], references: [id])
-}
+
