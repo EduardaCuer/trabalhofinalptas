@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../generated/prisma"
 }
 
 datasource db {
@@ -21,23 +20,4 @@ model Usuario {
   email String @unique
   password String
   tipo String
-  reservas Reserva[]
 }
-
-model Mesa {
-  id Int @id @default(autoincrement())
-  codigo String
-  n_lugares Int
-  reservas Reserva[]
-}
-
-
-
-//ver//
-  // true: reserva ativa | false: reserva cancelada
-  status Boolean @default(true)
-
-  usuarioId Int
-  usuario Usuario @relation(fields: [usuarioId], references: [id])
-
-
